@@ -1,9 +1,9 @@
-import HeroSection from "../component/HeroSection";
 import Bookgrid from "../component/Bookgrid";
+import ImageSlider from "./components/ImageSlider";
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <ImageSlider />
       <Bookgrid />
     </main>
   );
