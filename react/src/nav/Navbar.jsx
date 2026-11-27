@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "ABout", path: "/about" },
+  { label: "About", path: "/about" },
   {
-    label: "NewBook",
+    label: "New Books",
     children: [
       { label: "Popular", path: "/newbook/popular" },
       { label: "Holiday Gift Ideas", path: "/newbook/holiday-gift-ideas" },
-      { label: "Kids Classics", path: "/newbook/classics" },
-      { label: "See All Kids", path: "/newbook/see-all" },
       { label: "Classics", path: "/newbook/classics" },
+      { label: "See All", path: "/newbook/see-all" },
       { label: "Science Fiction", path: "/newbook/science-fiction" },
       { label: "Manga", path: "/newbook/manga" },
       { label: "Poetry", path: "/newbook/poetry" },
     ],
   },
   { label: "Ebook", path: "/ebook" },
-  { label: "Contact us", path: "/contactus" },
-  { label: "Sign up", path: "/signup" },
+  { label: "Contact Us", path: "/contactus" },
+  { label: "Sign Up", path: "/signup" },
   { label: "Login", path: "/login" },
 ];
 

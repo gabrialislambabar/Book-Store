@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
+import Home from "./pages/Home/Home.jsx";
 import Page from "./Page.jsx";
 
 const router = createBrowserRouter([
@@ -10,19 +11,18 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Page title="Home" /> },
-      { path: "about", element: <Page title="about" /> },
+      { index: true, element: <Home /> },
+      { path: "about", element: <Page title="About" /> },
       {
-        path: "NewBook",
+        path: "newbook",
         children: [
-          { path: "popular", element: <Page title="Popular Kids Books" /> },
+          { path: "popular", element: <Page title="Popular Books" /> },
           {
             path: "holiday-gift-ideas",
-            element: <Page title="Holiday Gift Ideas for Kids" />,
+            element: <Page title="Holiday Gift Ideas" />,
           },
-          { path: "classics", element: <Page title="Kids Classics" /> },
-          { path: "see-all", element: <Page title="All Kids Books" /> },
-          { path: "classics", element: <Page title="Fiction Classics" /> },
+          { path: "classics", element: <Page title="Classics" /> },
+          { path: "see-all", element: <Page title="See All Books" /> },
           {
             path: "science-fiction",
             element: <Page title="Science Fiction" />,
