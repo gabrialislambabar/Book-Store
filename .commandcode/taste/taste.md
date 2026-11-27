@@ -1,0 +1,2 @@
+- Prefers added code to be minimal and use simple, easy-to-understand concepts — avoid complex/advanced patterns. Confidence: 0.85
+- Prefers styling done with Tailwind CSS (utility classes) rather than separate CSS files or inline styles. Confidence: 0.85

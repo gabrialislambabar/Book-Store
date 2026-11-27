@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(cd /home/gabrial/Projects/bookstoreProject/react && ls node_modules | grep -i \"router\\|tailwind\" ; echo \"exit:$?\"; ls node_modules/@tailwindcss 2>/dev/null; echo \"---30---\"; ls node_modules | head -30)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

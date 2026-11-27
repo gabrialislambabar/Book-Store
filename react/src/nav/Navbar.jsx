@@ -1,81 +1,91 @@
-// src/components/Navbar.jsx
 import { useState } from "react";
-import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "ABout", path: "/about" },
+  {
+    label: "NewBook",
+    children: [
+      { label: "Popular", path: "/newbook/popular" },
+      { label: "Holiday Gift Ideas", path: "/newbook/holiday-gift-ideas" },
+      { label: "Kids Classics", path: "/newbook/classics" },
+      { label: "See All Kids", path: "/newbook/see-all" },
+      { label: "Classics", path: "/newbook/classics" },
+      { label: "Science Fiction", path: "/newbook/science-fiction" },
+      { label: "Manga", path: "/newbook/manga" },
+      { label: "Poetry", path: "/newbook/poetry" },
+    ],
+  },
+  { label: "Ebook", path: "/ebook" },
+  { label: "Contact us", path: "/contactus" },
+  { label: "Sign up", path: "/signup" },
+  { label: "Login", path: "/login" },
+];
+
+function Navbar() {
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const linkClass = ({ isActive }) =>
+    `rounded-md px-3 py-2 text-sm font-medium ${
+      isActive
+        ? "bg-indigo-50 text-indigo-600"
+        : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+    }`;
 
   return (
-    <nav className="navbar">
-      {/* Navigation Links */}
-      <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
-        <li>
-          <a href="#home" onClick={() => setIsOpen(false)}>
-            Holiday Gift Guide
-          </a>
-        </li>
-        <li>
-          <a href="#about" onClick={() => setIsOpen(false)}>
-            Gift Cards
-          </a>
-        </li>
-        <li>
-          <a href="#services" onClick={() => setIsOpen(false)}>
-            New Books
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Ebooks
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Ebooks
-          </a>
-        </li>
+    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-1 px-4 py-3">
+        <NavLink to="/" className="mr-4 text-lg font-bold text-indigo-600">
+          Bookstore
+        </NavLink>
 
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Best Sellers
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            kids
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Fiction
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Nonfiction
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            YA
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Games & Puzzles
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Stationary & More
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            Offers
-          </a>
-        </li>
-      </ul>
+        {navItems.map((item) => {
+          if (item.children) {
+            const isOpen = openMenu === item.label;
+
+            return (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => setOpenMenu(item.label)}
+                onMouseLeave={() => setOpenMenu(null)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenMenu(isOpen ? null : item.label)}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                >
+                  {item.label}
+                </button>
+
+                {isOpen && (
+                  <div className="absolute left-0 top-full flex min-w-48 flex-col rounded-md border border-gray-200 bg-white p-1 shadow-lg">
+                    {item.children.map((subItem) => (
+                      <NavLink
+                        key={subItem.path}
+                        to={subItem.path}
+                        onClick={() => setOpenMenu(null)}
+                        className="rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+                      >
+                        {subItem.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          }
+
+          return (
+            <NavLink key={item.path} to={item.path} className={linkClass}>
+              {item.label}
+            </NavLink>
+          );
+        })}
+      </div>
     </nav>
   );
 }
+
+export default Navbar;
