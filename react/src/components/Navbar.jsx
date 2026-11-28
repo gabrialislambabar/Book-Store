@@ -26,18 +26,18 @@ function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
 
   const linkClass = ({ isActive }) =>
-    `rounded-full px-4 py-1.5 text-sm transition ${
+    `rounded-full px-3.5 py-1.5 text-[13px] font-medium tracking-tight transition duration-200 ${
       isActive
         ? "bg-black/[0.06] text-[#1d1d1f]"
-        : "text-[#1d1d1f]/80 hover:text-[#1d1d1f]"
+        : "text-[#1d1d1f]/75 hover:bg-black/[0.03] hover:text-[#1d1d1f]"
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/[0.08] bg-white/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-1 px-4 py-2.5">
+    <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/70 backdrop-blur-2xl backdrop-saturate-150">
+      <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-1 px-5 py-3 sm:px-8">
         <NavLink
           to="/"
-          className="mr-4 text-base font-semibold tracking-tight text-[#1d1d1f]"
+          className="mr-4 text-[17px] font-semibold tracking-tight text-[#1d1d1f]"
         >
           Bookstore
         </NavLink>
@@ -56,19 +56,19 @@ function Navbar() {
                 <button
                   type="button"
                   onClick={() => setOpenMenu(isOpen ? null : item.label)}
-                  className="rounded-full px-4 py-1.5 text-sm text-[#1d1d1f]/80 transition hover:text-[#1d1d1f]"
+                  className="rounded-full px-3.5 py-1.5 text-[13px] font-medium tracking-tight text-[#1d1d1f]/75 transition duration-200 hover:bg-black/[0.03] hover:text-[#1d1d1f]"
                 >
                   {item.label}
                 </button>
 
                 {isOpen && (
-                  <div className="absolute left-0 top-full flex min-w-52 flex-col rounded-2xl border border-black/[0.08] bg-white/95 p-1.5 shadow-xl backdrop-blur-xl">
+                  <div className="absolute left-0 top-full mt-2 flex min-w-56 flex-col rounded-2xl border border-black/[0.06] bg-white p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
                     {item.children.map((subItem) => (
                       <NavLink
                         key={subItem.path}
                         to={subItem.path}
                         onClick={() => setOpenMenu(null)}
-                        className="rounded-xl px-4 py-2 text-sm text-[#1d1d1f]/80 transition hover:bg-black/[0.04] hover:text-[#1d1d1f]"
+                        className="rounded-xl px-3.5 py-2 text-[13px] tracking-tight text-[#1d1d1f]/80 transition duration-150 hover:bg-black/[0.04] hover:text-[#1d1d1f]"
                       >
                         {subItem.label}
                       </NavLink>

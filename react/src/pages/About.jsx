@@ -6,9 +6,13 @@ export default function About() {
   return (
     <main>
       <AboutHero />
-      <Mission />
-      <OurStory />
-      <OurValues />
+      <div className="divide-y divide-black/[0.06]">
+        <Mission />
+        <section className="grid grid-cols-1 gap-6 py-16 md:grid-cols-2">
+          <OurStory />
+          <OurValues />
+        </section>
+      </div>
     </main>
   );
 }
