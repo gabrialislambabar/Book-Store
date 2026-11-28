@@ -1,11 +1,6 @@
-import ImageSlider from "./components/ImageSlider";
-import { BookList } from "./components/Booklist";
-
-import hero from "../../assets/hero.png";
-import reactLogo from "../../assets/react.svg";
-import viteLogo from "../../assets/vite.svg";
-
-const images = [hero, reactLogo, viteLogo];
+import ImageSlider from "../components/ImageSlider";
+import { BookList } from "../components/Booklist";
+import Hero from "../features/home/Hero";
 
 const books = [
   { id: 1, title: "The Great Gatsby", shopname: "Downtown Books", image: hero },
@@ -17,8 +12,11 @@ const books = [
 export default function Home() {
   return (
     <main>
+      <Hero />
       <ImageSlider images={images} />
-      <BookList books={books} />
+      <BookList books={books} /> //Special on the store
+      <BookList /> // For kids
+      <BookList /> // For gifts
     </main>
   );
 }
