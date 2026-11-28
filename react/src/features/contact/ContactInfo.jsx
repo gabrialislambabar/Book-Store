@@ -1,4 +1,5 @@
 import ContactInfoLink from "./ContactInfolinks";
+import { contactlinks } from "../../data/contactlinks";
 
 export default function ContactInfo() {
   return (
@@ -10,6 +11,18 @@ export default function ContactInfo() {
         lovers. Reach out to our team, and we'll get back to you as soon as
         possible.
       </p>
+
+      <div>
+        {contactlinks.map((contact) => (
+          <ContactInfoLink
+            key={contact.id}
+            logosrc={contact.logosrc}
+            text1={contact.text1}
+            text2={contact.text2}
+            text3={contact.text3}
+          />
+        ))}
+      </div>
     </main>
   );
 }
