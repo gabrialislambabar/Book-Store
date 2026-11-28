@@ -2,9 +2,7 @@ import ImageSlider from "../components/ImageSlider";
 import Hero from "../features/home/Hero";
 import LatestArrival from "../features/home/LatestArrival";
 import PopularEbook from "../feature/home/PopularEbook";
-import OurStory from "../features/about/OurStory";
-import OurValues from "../features/about/OurValues";
-
+import WhyChooseus from "../features/home/WhyChooseus";
 // const books = [
 //   { id: 1, title: "The Great Gatsby", shopname: "Downtown Books", image: hero },
 //   { id: 2, title: "Atomic Habits", shopname: "City Reads", image: reactLogo },
@@ -19,8 +17,7 @@ export default function Home() {
       <ImageSlider />
       <LatestArrival />
       <PopularEbook />
-      <OurStory />
-      <OurValues />
+      <WhyChooseus />
     </main>
   );
 }
