@@ -1,7 +1,7 @@
 import ImageSlider from "../components/ImageSlider";
 import Hero from "../features/home/Hero";
 import LatestArrival from "../features/home/LatestArrival";
-import PopularEbook from "../feature/home/PopularEbook";
+import PopularEbook from "../features/home/PopularEbook";
 import WhyChooseus from "../features/home/WhyChooseus";
 // const books = [
 //   { id: 1, title: "The Great Gatsby", shopname: "Downtown Books", image: hero },
@@ -13,7 +13,7 @@ import WhyChooseus from "../features/home/WhyChooseus";
 export default function Home() {
   return (
     <main>
-      <Hero /> // Hero section
+      <Hero />
       <ImageSlider />
       <LatestArrival />
       <PopularEbook />

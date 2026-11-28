@@ -1,10 +1,12 @@
 export function BookCard({ book }) {
+  if (!book) return null;
+
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+    <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
       <img
         src={book.image}
         alt={book.title}
-        className="h-40 w-full rounded-md bg-gray-100 object-cover"
+        className="h-40 w-full bg-[#f5f5f7] object-cover"
       />
     </div>
   );

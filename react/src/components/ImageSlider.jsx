@@ -19,24 +19,28 @@ const ImageSlider = ({ images }) => {
 
   // If no image is passed
   if (!images || images.length === 0)
-    return <p className="text-center text-gray-500">No images passed</p>;
+    return (
+      <p className="py-12 text-center text-sm text-[#6e6e73]">
+        No images passed
+      </p>
+    );
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white">
+    <div className="relative overflow-hidden rounded-3xl bg-[#1d1d1f]">
       <img
         src={images[currentIndex]}
         alt="slide"
-        className="h-64 w-full object-cover"
+        className="h-72 w-full object-cover"
       />
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-gray-700 shadow hover:bg-white"
+        className="absolute top-1/2 left-4 -translate-y-1/2 rounded-full bg-white/20 px-3 py-2 text-white backdrop-blur transition hover:bg-white/30"
       >
         ‹
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 text-gray-700 shadow hover:bg-white"
+        className="absolute top-1/2 right-4 -translate-y-1/2 rounded-full bg-white/20 px-3 py-2 text-white backdrop-blur transition hover:bg-white/30"
       >
         ›
       </button>

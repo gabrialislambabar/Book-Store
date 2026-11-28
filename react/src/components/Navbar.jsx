@@ -26,16 +26,19 @@ function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
 
   const linkClass = ({ isActive }) =>
-    `rounded-md px-3 py-2 text-sm font-medium ${
+    `rounded-full px-4 py-1.5 text-sm transition ${
       isActive
-        ? "bg-indigo-50 text-indigo-600"
-        : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+        ? "bg-black/[0.06] text-[#1d1d1f]"
+        : "text-[#1d1d1f]/80 hover:text-[#1d1d1f]"
     }`;
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-1 px-4 py-3">
-        <NavLink to="/" className="mr-4 text-lg font-bold text-indigo-600">
+    <header className="sticky top-0 z-50 border-b border-black/[0.08] bg-white/80 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-1 px-4 py-2.5">
+        <NavLink
+          to="/"
+          className="mr-4 text-base font-semibold tracking-tight text-[#1d1d1f]"
+        >
           Bookstore
         </NavLink>
 
@@ -53,19 +56,19 @@ function Navbar() {
                 <button
                   type="button"
                   onClick={() => setOpenMenu(isOpen ? null : item.label)}
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                  className="rounded-full px-4 py-1.5 text-sm text-[#1d1d1f]/80 transition hover:text-[#1d1d1f]"
                 >
                   {item.label}
                 </button>
 
                 {isOpen && (
-                  <div className="absolute left-0 top-full flex min-w-48 flex-col rounded-md border border-gray-200 bg-white p-1 shadow-lg">
+                  <div className="absolute left-0 top-full flex min-w-52 flex-col rounded-2xl border border-black/[0.08] bg-white/95 p-1.5 shadow-xl backdrop-blur-xl">
                     {item.children.map((subItem) => (
                       <NavLink
                         key={subItem.path}
                         to={subItem.path}
                         onClick={() => setOpenMenu(null)}
-                        className="rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+                        className="rounded-xl px-4 py-2 text-sm text-[#1d1d1f]/80 transition hover:bg-black/[0.04] hover:text-[#1d1d1f]"
                       >
                         {subItem.label}
                       </NavLink>
@@ -82,8 +85,8 @@ function Navbar() {
             </NavLink>
           );
         })}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

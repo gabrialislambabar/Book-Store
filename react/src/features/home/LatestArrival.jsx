@@ -1,13 +1,18 @@
-import { BookCard } from "./BookCard";
+import { BookCard } from "../../components/BookCard";
 
+// This should display the books that have been latest added to the website by the books, not the genre
 export default function LatestArrival() {
   return (
-    <main>
-      <h1>Fresh Off the Shelves</h1>
-      <p>Explore the latest additions to our growing collection.</p>
-      // This should display the books that have been latest added to the //
-      website by the books // not the genre
-      <BookCard />
-    </main>
+    <section className="py-12">
+      <h1 className="text-2xl font-semibold tracking-tight text-[#1d1d1f]">
+        Fresh Off the Shelves
+      </h1>
+      <p className="mt-1 text-sm text-[#6e6e73]">
+        Explore the latest additions to our growing collection.
+      </p>
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <BookCard />
+      </div>
+    </section>
   );
 }

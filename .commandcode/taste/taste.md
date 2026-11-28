@@ -1,2 +1,4 @@
 - Prefers added code to be minimal and use simple, easy-to-understand concepts — avoid complex/advanced patterns. Confidence: 0.85
 - Prefers styling done with Tailwind CSS (utility classes) rather than separate CSS files or inline styles. Confidence: 0.85
+- Prefers minimal, targeted edits: fix the broken/missing pieces in existing code and leave the existing structure and working code alone, rather than refactoring or rewriting files. Confidence: 0.8
+- Do not invent content: no fabricated sample data, placeholder copy, or new sections — fix only what is written in the code and leave empty stubs for them to fill in. Confidence: 0.85
