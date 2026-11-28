@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Page from "./Page.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         ],
       },
       { path: "ebook", element: <Page title="Ebook" /> },
-      { path: "contactus", element: <Page title="Contact Us" /> },
+      { path: "contactus", element: <Contact /> },
       { path: "signup", element: <Page title="Sign Up" /> },
       { path: "login", element: <Page title="Login" /> },
     ],
