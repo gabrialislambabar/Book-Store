@@ -1,5 +1,5 @@
 import Button from "../../components/Button";
-import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/death.jpg";
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
         className="mx-auto mt-10 w-full max-w-4xl rounded-3xl"
       />
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <Button to="/newbook/see-all">Explore Books</Button>
+        <Button to="/newbook/popular">Explore Books</Button>
         <Button to="/newbook/see-all">Discover New Arrivals</Button>
       </div>
     </section>
